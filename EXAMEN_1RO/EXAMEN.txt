@@ -1,3 +1,4 @@
+URL GIT: https://github.com/Ariel-Huarachi/SIS420_IA_1_2026/tree/main/EXAMEN_1RO
 
 1. DESCRIPCIÓN DEL DATASET: AMES HOUSING
 Nombre del dataset: Ames Housing Dataset

@@ -1,0 +1,67 @@
+Data 7
+EXPLICACIÓN 
+
+Primero se cargó el archivo australian.dat con numpy. Este dataset contiene 690 registros y 15 columnas:
+ 14 columnas de entrada
+ 1 columna de salida
+
+La última columna corresponde a la variable objetivo, que toma valores:
+ 0 = crédito rechazado
+ 1 = crédito aprobado
+
+Luego se mezclaron los datos aleatoriamente y se dividieron en:
+- 75% entrenamiento
+- 25% prueba
+
+Después se realizó la normalización de las variables de entrada. Este paso es importante porque las variables tienen diferentes escalas y el descenso por gradiente funciona mejor cuando los datos están normalizados. La normalización se hizo usando solamente los datos de entrenamiento, y luego esos mismos parámetros se aplicaron al conjunto de prueba. Esto evita fuga de información y ayuda a evaluar correctamente el rendimiento real
+
+MODELO DE CLASIFICACIÓN
+- función sigmoidea
+- función de costo logística
+- descenso por gradiente
+- predicción con umbral de 0.5
+
+problema real del dataset es de clasificación binaria.
+
+Para evaluar el modelo se calcularon:
+
+CLASIFICACIÓN - ENTRENAMIENTO
+Accuracy : 0.8781431334622823
+Precision: 0.8347107438016529
+Recall   : 0.8977777777777778
+F1-score : 0.8650963597430407
+
+CLASIFICACIÓN - PRUEBA
+Accuracy : 0.838150289017341
+Precision: 0.7934782608695652
+Recall   : 0.8902439024390244
+F1-score : 0.8390804597701148
+
+
+ANÁLISIS GENERAL DE RESULTADOS
+El modelo de regresión lineal permite observar qué tan cerca están las predicciones continuas respecto al valor real 0 o 1, pero conceptualmente no es el mejor enfoque para este problema.
+
+2. MODELO DE REGRESIÓN
+Como modelo de regresión se implementó una regresión lineal mediante descenso por gradiente
+- definición de función de costo
+- actualización de parámetros theta
+- registro del historial del costo
+- gráfica de convergencia
+
+Este modelo produce una salida continua, por lo que se evaluó con métricas propias de regresión:
+
+REGRESIÓN LINEAL - ENTRENAMIENTO
+MSE : 0.0945588712225421
+RMSE: 0.3075042621209373
+MAE : 0.20643153644343162
+R2  : 0.6153037118690707
+
+REGRESIÓN LINEAL - PRUEBA
+MSE : 0.12344559576120417
+RMSE: 0.35134825424527755
+MAE : 0.24210334557560342
+R2  : 0.5048776151786277
+
+También se generó una gráfica de valores reales vs valores predichos en el conjunto de prueba.
+
+problema es el de clasificación logística, porque el objetivo del dataset es decidir entre dos clases: aprobación o rechazo del crédito.
